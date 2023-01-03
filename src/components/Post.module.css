@@ -1,0 +1,23 @@
+
+.postContent div{
+    background-color: var(--gray-400);
+    height: 3.37rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: left;
+    padding: 0 10px;
+    gap: .5rem;
+}
+.postContent label {
+    width: 97%;
+    text-align: center;
+    margin: auto;
+}
+.postContent i{
+    width: 3%;
+    margin: auto;
+}
+input[type="radio"] {
+    accent-color: var(--blue);     
+}

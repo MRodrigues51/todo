@@ -1,0 +1,91 @@
+.bodyAddTask {
+    display: flex;
+    gap: 1rem;
+}
+.input {
+    width: 85%;
+    height: 3.37rem;
+    padding: 1rem;
+    resize: none;
+    border-radius: 8px;
+    background-color: var(--gray-400);
+    border: 1px solid var(--gray-700);    
+    line-height: 1.4;  
+    color: var(--gray-100);
+    position: relative;
+}
+.input:focus {
+    outline: none !important;
+    border:1px solid var(--purple-dark);
+}
+.button {
+    width: 15%;
+    background-color: var(--blue-dark);
+    color: var(--gray-100);
+    border: 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    gap: .5rem;
+}
+.button:hover {
+    background-color: var(--blue);
+    cursor: pointer;
+}
+.contentTaskShow{
+    
+    margin-top: 360px;
+}
+
+.header{
+    width: 100%;
+    display: inline-block;
+    max-width: 40rem;
+    margin: 1rem auto;
+}
+.header .left {
+    float: left;
+    color: var(--blue);
+    font-weight: 600;
+}
+.header .left i{
+    background-color: var(--gray-400);
+    padding: 1px 6px 1px 6px;
+    font-style: normal;
+    font-size: .8rem;
+    font-weight: 100;
+    border-radius: 8px;
+    color: var(--gray-100);
+}
+.header .right {
+    float: right;
+    color: var(--purple);
+    font-weight: 600;
+}
+.header .right i{
+    background-color: var(--gray-400);
+    padding: 1px 6px 1px 6px;
+    font-style: normal;
+    font-size: .8rem;
+    font-weight: 100;
+    border-radius: 8px;
+    color: var(--gray-100);
+}
+.contentTaskEmpty {    
+    height: 260px;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 6rem;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--gray-300);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.wrapperContentTask {
+    max-width: 40rem;
+    height: 30px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }

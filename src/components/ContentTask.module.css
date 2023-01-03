@@ -1,0 +1,11 @@
+.contentTaskEmpty {    
+    height: 260px;
+    text-align: center;
+    margin-top: 4rem;
+    padding: 6rem;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--gray-300);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
