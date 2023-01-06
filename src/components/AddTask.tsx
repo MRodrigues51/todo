@@ -1,5 +1,5 @@
-import { PlusCircle } from 'phosphor-react';
-import { useState } from 'react';
+import { Envelope, PlusCircle } from 'phosphor-react';
+import { ChangeEvent, useState } from 'react';
 import { Post } from './Post';
 import  styles  from './AddTask.module.css';
 import { ContentTask } from './ContentTask';
@@ -21,10 +21,12 @@ export function AddTask() {
         setTasks([...tasks, newTask]);        
         setNewTask('');
     }
-    function handleNewTaskChange(){
+    function handleNewTaskChange(event: ChangeEvent<HTMLLabelElement>){
+        event.target.setCustomValidity('')
         setNewTask(event?.target.value)        
     }
-    function deleteTask(taskToDelete){
+    function deleteTask(taskToDelete: string){
+        console.log(`Deletar task ${taskToDelete}`)
         const tasksWithoutDeleteOne = tasks.filter(task =>{
             return task !== taskToDelete;
         })
@@ -52,15 +54,9 @@ export function AddTask() {
                 className={styles.wrapperContentTask}>
                     { showElement ? null : <ContentTask /> }
                     {tasks.map( tasks =>{
-                        return  showElement ? <Post key={tasks} content={tasks}/> : null
+                        return  showElement ? <Post key={tasks} content={tasks} onDeleteTask={deleteTask}/> : null
                     })}                                    
-            </div>
-            <div className={styles.contentTaskShow}>
-                {tasks.map( tasks => {    
-                        return <Post key={tasks} content={tasks}/>
-                })}
-            </div>
-            
+            </div>           
         </div>
     )
 }
