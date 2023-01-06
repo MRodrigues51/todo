@@ -15,7 +15,8 @@ export function Post({content, onDeleteTask}: PostProps) {
         <div className={styles.postContent}>
             <div>
                 <input type="radio" />
-                <label>{content}</label>
+                <label>{content}
+                </label>
                 <button onClick={handleDeletePost} title='Deletar Comentário'>
                     <Trash />
                 </button>
