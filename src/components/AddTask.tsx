@@ -1,4 +1,4 @@
-import { Envelope, PlusCircle } from 'phosphor-react';
+import { PlusCircle } from 'phosphor-react';
 import { ChangeEvent, useState } from 'react';
 import { Post } from './Post';
 import  styles  from './AddTask.module.css';
@@ -48,7 +48,7 @@ export function AddTask() {
                     required
                 >
                 </input>        
-                <button onClick={showOrHide} className={styles.button}>Criar <PlusCircle size='24' weight='bold'/></button>            
+                <button onClick={showOrHide} className={styles.button}>Criar <PlusCircle className={styles.icon} size='24' weight='bold'/></button>            
             </form>
             <header className={styles.header}>
                 <div>

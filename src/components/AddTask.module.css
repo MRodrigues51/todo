@@ -33,6 +33,23 @@
     background-color: var(--blue);
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    html {
+        font-size: 87.5%;
+    }
+    .button {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        padding-left: 0.75rem;
+    }
+    .icon {
+        z-index: -5;
+        color: transparent;    
+    }
+
+  }
+
 .contentTaskShow{
     
     margin-top: 360px;
