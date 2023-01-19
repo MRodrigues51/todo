@@ -24,6 +24,10 @@
     height: 1.2rem;
     cursor: pointer;
 }
+.postContent input[type="radio"]:checked{
+    pointer-events: none;
+    outline: none;
+}
 .postContent div > input[type="radio"] + *::before{
     content: "";
     display: flex;
@@ -39,6 +43,7 @@
     cursor: pointer;
     justify-content: flex-start;
     position: absolute;
+    
 }
 .postContent input[type="radio"]:checked + *::before{
     background: radial-gradient(var(--purple-dark) 0%, var(--purple-dark) 100%, transparent 50%, transparent);
@@ -47,6 +52,7 @@
 .postContent input[type="radio"]:checked + * {
     color: var(--purple-dark);
     text-decoration: line-through;
+    pointer-events: none;
 }
 .postContent button {
     background-color: transparent;

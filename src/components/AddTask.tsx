@@ -4,17 +4,21 @@ import { Post } from './Post';
 import  styles  from './AddTask.module.css';
 import { ContentTask } from './ContentTask';
 
-
 export function AddTask() {
     const [newTask, setNewTask] = useState<string>("")
     const [tasks, setTasks] = useState<string[]>([
       
     ])
+  
+    const [count, setCount] = useState<number>(0)
 
+    const checkTask = () => {
+        setCount(count + 1);
+    }
+    
     const [showElement, setShowElement] = useState(false)
     const showOrHide = () => setShowElement(true)
 
-    
     function handleCreateTask() {
         event?.preventDefault()
         
@@ -28,13 +32,15 @@ export function AddTask() {
     function handleNewTaskInvalid(event: ChangeEvent<HTMLInputElement>){
         event?.target.setCustomValidity('Esse campo é obrigatório!')
     }
-    function deleteTask(taskToDelete: string){
-        console.log(`Deletar task ${taskToDelete}`)
+    function deleteTask(taskToDelete: string){        
         const tasksWithoutDeleteOne = tasks.filter(task =>{
             return task !== taskToDelete;
         })
+
         setTasks(tasksWithoutDeleteOne);
+        setCount(count - tasksWithoutDeleteOne.find.length)
     }
+   
     return (
         <div>
             <form onSubmit={handleCreateTask} className={styles.bodyAddTask}>
@@ -53,14 +59,15 @@ export function AddTask() {
             <header className={styles.header}>
                 <div>
                     <strong className={styles.left}>Tarefas Criadas <i>{tasks.length}</i></strong>
-                    <strong className={styles.right}>Concluídas <i>{tasks.length} de {tasks.length}</i></strong>
+                    <strong className={styles.right}>Concluídas <i>{count} de {tasks.length}</i></strong>
                 </div>
             </header>
             <div 
                 className={styles.wrapperContentTask}>
                     { showElement ? null : <ContentTask /> }
                     {tasks.map( tasks =>{
-                        return  showElement ? <Post key={tasks} content={tasks} onDeleteTask={deleteTask}/> : null
+                        return  showElement ? 
+                    <Post key={tasks} content={tasks} onDeleteTask={deleteTask} onCheckTask={checkTask}/> : null
                     })}                                    
             </div>           
         </div>

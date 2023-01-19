@@ -14,9 +14,7 @@ export function App() {
       <div className={styles.wrapperAddTask}>
         <AddTask />
       </div>
-      <div className={styles.wrapperContentPost}>
-        
-      </div>
+      
     </div>
   );
 }
